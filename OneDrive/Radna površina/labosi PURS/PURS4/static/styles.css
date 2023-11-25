@@ -46,7 +46,7 @@ nav {
   display: flex; 
   background-color: #3A454D;
   padding: 10px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px 5px 5px 5px;
   margin-top: 20px;
   width: 100%;  
  
@@ -68,12 +68,12 @@ table{
   border-collapse: collapse;
   }
 
-  th {
-    background-color: #3A454D;
-    color: white; 
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
+th {
+  background-color: #3A454D;
+  color: white; 
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
 }
 
 td {
