@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('login.png'); /* Set background image for the body */
+    background-size: cover;
+}
+
+form {
+    box-shadow: 0 0 5px;
+    border-radius: 4px;
+    width: 200px;
+    padding: 15px; /* Increase padding for better aesthetics */
+    text-align: center;
+    background-color: gray; /* Set background color for the form */
+    color:black ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p{  align-items: center;
+    font-weight: 300 ;
+    font-weight: bold;
+}
+
+form { font-weight: 300 ;
+    font-weight: bold;}
+

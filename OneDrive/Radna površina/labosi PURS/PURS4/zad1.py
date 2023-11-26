@@ -32,10 +32,16 @@ def podaci():
 
 @app.before_request
 def before_request_func():
-    if request.path == '/login':
-        return 
-    if session.get('Username') is None:
-        return redirect(url_for('login'))
+
+    # Ignore authorization check for static folder / GET static content
+    if request.path.startswith('/static'):
+        return
+    
+    # If user is not authorized and request path is not login
+    if session.get('Username') is None and request.path != '/login' :
+        return redirect(url_for('login')) # Return login page
+    elif session.get('Username') is not None and request.path == '/login': # User is authorized and login page is requested
+        return redirect(url_for('index')) # Return home page
 
 @app.get('/logout')
 def logout():
