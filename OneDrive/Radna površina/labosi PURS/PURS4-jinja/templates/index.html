@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="user-info">
+                <p> 
+                    {{Username}}
+                </p>
+                <img src="{{ url_for('static', filename='user-icon.png')}}" width="70px">
+            </div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='icon.png') }}" width="70px">
+            </div>
+        </div>
+        <nav>
+            <a href="{{ url_for('logout')}}">Logout</a>
+            <a href="/?id=1">Temperatura</a>
+            <a href="/?id=2">Vlaga</a>
+        </nav>
+        <table>
+            <tr>
+                <th>Vrijeme</th>
+                <th>{{ naslov_stupca }}</th>
+                <th>Brisanje</th>
+            </tr>
+            {% for entry in podaci %}
+                <tr>
+                    <td>{{ entry['datum'] }}</td>
+                    <td>{{ entry['vrijednost'] }}</td>
+                    <td><button type="submit">Obriši</button></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
